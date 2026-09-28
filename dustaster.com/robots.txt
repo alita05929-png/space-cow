@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# link-preview crawlers, named explicitly so there is no ambiguity
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+Sitemap: https://dustaster.com/sitemap.xml

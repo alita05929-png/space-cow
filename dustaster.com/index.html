@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DUST — The Official Mascot of Aster</title>
+<meta name="description" content="DUST is the official mascot of Aster. A hooded traveller with a halo and a blade, drifting on BNB Chain. $DUST on PancakeSwap.">
+<link rel="canonical" href="https://dustaster.com/">
+
+<meta property="og:type" content="website">
+<!-- The canonical-url property is deliberately absent: X treats it as the card
+     identity, which collapsed every ?query variant onto one cached card and made
+     cache-busting impossible. rel=canonical above covers search engines.
+     (Written without the literal property name so no regex-based parser can
+     mistake this comment for a real tag.) -->
+<meta property="og:title" content="DUST — The Official Mascot of Aster">
+<meta property="og:description" content="A hooded traveller with a halo and a blade. The official mascot of Aster, drifting on BNB Chain.">
+<meta property="og:image" content="https://dustaster.com/assets/img/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DUST — The Official Mascot of Aster">
+<meta name="twitter:description" content="A hooded traveller with a halo and a blade. The official mascot of Aster, drifting on BNB Chain.">
+<meta name="twitter:image" content="https://dustaster.com/assets/img/og-card.jpg">
+<meta name="twitter:image:alt" content="DUST — the official mascot of Aster">
+<meta property="og:image:alt" content="DUST — the official mascot of Aster">
+<meta property="og:site_name" content="dustaster.com">
+<meta name="theme-color" content="#08060f">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="apple-mobile-web-app-title" content="DUST">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.dexscreener.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<canvas id="glcanvas" aria-hidden="true"></canvas>
+<canvas id="dustfield" aria-hidden="true"></canvas>
+<div class="nebula" aria-hidden="true"></div>
+<div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="grain" aria-hidden="true"></div>
+
+<a class="skip" href="#lore">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="DUST home">
+      <picture><source srcset="/assets/img/mascot-avatar.avif" type="image/avif"><img src="/assets/img/mascot-avatar.jpg" alt="" width="34" height="34" decoding="async"></picture>
+      <span>DUST</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#lore">Lore</a>
+      <a href="#mascot">Mascot</a>
+      <a href="#token">Token</a>
+      <a href="#buy">How to buy</a>
+      <a href="#art">Art</a>
+    </nav>
+    <a class="btn btn-sm" id="nav-buy" href="#buy">Buy $DUST</a>
+  </div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+</header>
+
+<!-- ── HERO ─────────────────────────────────────────────── -->
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+
+    <p class="eyebrow reveal">
+      <span class="dot"></span> The official mascot of Aster
+    </p>
+
+    <figure class="hero-mascot reveal">
+      <span class="hero-glow" aria-hidden="true"></span>
+      <picture>
+        <source srcset="/assets/img/mascot-hero.avif" type="image/avif">
+        <img src="/assets/img/mascot-hero.jpg" width="700" height="700" fetchpriority="high"
+             decoding="async"
+             alt="DUST, a hooded figure with a glowing halo, holding a coin of light">
+      </picture>
+    </figure>
+
+    <h1 class="wordmark reveal" aria-label="DUST">
+      <span>D</span><span>U</span><span>S</span><span>T</span>
+    </h1>
+
+    <p class="lede reveal">
+      A hooded traveller with a halo and a blade — born from the space between trades.
+      Every fill leaves something behind. That something is <strong>DUST</strong>.
+    </p>
+
+    <div class="chips reveal" role="list">
+      <span class="chip" role="listitem">BNB Chain</span>
+      <span class="chip" role="listitem">PancakeSwap</span>
+      <span class="chip" role="listitem">1,000,000,000 supply</span>
+      <span class="chip" role="listitem">Ownership renounced</span>
+    </div>
+
+    <div class="cta reveal">
+      <a class="btn btn-lg" id="buy-primary" href="#buy">Buy $DUST</a>
+      <a class="btn btn-lg btn-ghost" href="https://dexscreener.com/bsc/0x19b2caf222446d28906d0f3e66c877379951cbcb" target="_blank" rel="noopener">
+        Live chart <svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+      </a>
+    </div>
+
+    <!-- contract -->
+    <div class="ca reveal">
+      <span class="ca-label">Contract</span>
+      <code id="ca-text">0x932Fb7f52adBC34ff81B4342b8C036b7b8Ac4444</code>
+      <button class="ca-copy" id="ca-copy" type="button" aria-label="Copy contract address">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        <span>Copy</span>
+      </button>
+    </div>
+    <p class="ca-warn reveal">Always verify the address. It is the only one.</p>
+
+    <!-- live stats -->
+    <div class="stats reveal" id="stats" aria-live="polite">
+      <div class="stat"><span class="k">Price</span><span class="v" data-stat="price">—</span></div>
+      <div class="stat"><span class="k">Market cap</span><span class="v" data-stat="mcap">—</span></div>
+      <div class="stat"><span class="k">Liquidity</span><span class="v" data-stat="liq">—</span></div>
+      <div class="stat"><span class="k">24h</span><span class="v" data-stat="chg">—</span></div>
+    </div>
+    <p class="stats-note" id="stats-note">Live from DexScreener</p>
+
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><span></span></div>
+</section>
+
+<!-- ── LORE ─────────────────────────────────────────────── -->
+<section id="lore" class="lore">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-label">Lore</span>
+      <h2 class="section-title">The drift</h2>
+    </header>
+
+    <article class="chapter reveal">
+      <div class="numeral" aria-hidden="true">I</div>
+      <div class="chapter-body">
+        <h3>Nothing is ever fully spent</h3>
+        <p>Every trade leaves a remainder. A rounding, a residue, a fraction too small to name.
+           The chain calls it dust and forgets it. For a long time, so did everyone else.</p>
+      </div>
+      <figure class="chapter-art"><picture><source srcset="/assets/img/chapter-1.avif" type="image/avif"><img src="/assets/img/chapter-1.jpg" alt="A crowd of small hooded dust figures in the dark" loading="lazy" width="620" height="620" decoding="async"></picture></figure>
+    </article>
+
+    <article class="chapter reveal">
+      <div class="numeral" aria-hidden="true">II</div>
+      <div class="chapter-body">
+        <h3>Then a star opened</h3>
+        <p>Aster lit up and the remainders started to move — pulled together, given a shape,
+           given a hood. What the market discarded stood up and looked back.</p>
+      </div>
+      <figure class="chapter-art"><picture><source srcset="/assets/img/chapter-2.avif" type="image/avif"><img src="/assets/img/chapter-2.jpg" alt="DUST holding a point of light on a cliff edge" loading="lazy" width="620" height="620" decoding="async"></picture></figure>
+    </article>
+
+    <article class="chapter reveal">
+      <div class="numeral" aria-hidden="true">III</div>
+      <div class="chapter-body">
+        <h3>It carries a halo and a blade</h3>
+        <p>The halo for where it came from. The blade for everything that gets in the way —
+           spreads, slippage, hesitation. DUST does not negotiate with friction.</p>
+      </div>
+      <figure class="chapter-art"><picture><source srcset="/assets/img/chapter-3.avif" type="image/avif"><img src="/assets/img/chapter-3.jpg" alt="DUST channelling arcs of energy" loading="lazy" width="620" height="620" decoding="async"></picture></figure>
+    </article>
+
+    <article class="chapter reveal">
+      <div class="numeral" aria-hidden="true">IV</div>
+      <div class="chapter-body">
+        <h3>Now it drifts, and it is not alone</h3>
+        <p>No roadmap, no promises, no suits. A face for a place, and a crowd that decided
+           it was theirs. That is the whole mechanism.</p>
+      </div>
+      <figure class="chapter-art"><picture><source srcset="/assets/img/chapter-4.avif" type="image/avif"><img src="/assets/img/chapter-4.jpg" alt="DUST surrounded by a rising crowd" loading="lazy" width="620" height="620" decoding="async"></picture></figure>
+    </article>
+  </div>
+</section>
+
+
+<!-- ── MASCOT ───────────────────────────────────────────── -->
+<section id="mascot" class="mascot">
+  <!-- The stage is a direct child of the section, NOT of .wrap. .wrap is a
+       narrower centred column, so a video wider than it could only be centred
+       by overflowing its own grid area — which is what pushed it off to one
+       side. As a plain block with `margin-inline:auto` it is centred on the
+       page by construction. -->
+  <div class="mascot-stage reveal">
+    <video class="mascot-video"
+           src="/assets/video/drift.mp4"
+           poster="/assets/video/drift-poster.jpg"
+           width="1280" height="720"
+           autoplay muted loop playsinline preload="metadata"
+           disablepictureinpicture
+           aria-label="The DUST mascot adrift in a storm that breaks into light">
+    </video>
+
+    <!-- The only control on the video. Ships as "off" because autoplay is only
+         permitted while muted, so the honest initial state is muted. -->
+    <button class="music-btn" type="button" aria-pressed="false"
+            aria-label="Turn music on">
+      <!-- viewBox is cropped to the ink (paths + half the stroke width), not the
+           nominal 24x24 grid. In a 0 0 24 24 box this icon's ink filled only 74%
+           of the width and 60% of the height, so it floated inside its own box
+           and no amount of flex centring could line it up with the label. -->
+      <svg class="music-ico" viewBox="3.4 4.8 17.8 14.4" aria-hidden="true" focusable="false">
+        <path class="ico-spk" d="M4 9.5v5h3.2L12 18.6V5.4L7.2 9.5H4Z"/>
+        <path class="ico-off" d="M15.5 9.5l4 4m0-4l-4 4"/>
+        <path class="ico-on"  d="M15.6 9.1a4 4 0 0 1 0 5.8M18 6.8a7.2 7.2 0 0 1 0 10.4"/>
+      </svg>
+      <span class="music-txt">Music off</span>
+    </button>
+  </div>
+
+  <div class="wrap mascot-grid">
+    <div class="mascot-copy reveal">
+      <h2 class="section-title left">Aster's<br>official mascot</h2>
+      <p>Protocols get logos. The good ones get a character — something a community can draw badly at 3am and still recognise instantly.</p>
+      <p>DUST is that character for Aster. Not a product, not a claim on the exchange, not a promise of yield. A mascot, a flag, and a very small amount of everything that was left over.</p>
+      <ul class="ticks">
+        <li>Ownership renounced — <code>owner()</code> returns the zero address</li>
+        <li>Fixed supply of 1,000,000,000, verifiable on chain</li>
+        <li>Trading on BNB Chain since September 2025</li>
+        <li>Community-run. No roadmap, no promises, no suits</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── ART RIBBON ───────────────────────────────────────── -->
+<div class="ribbon" aria-hidden="true">
+  <div class="ribbon-track" id="ribbon"></div>
+</div>
+
+<!-- ── MARQUEE ──────────────────────────────────────────── -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Aster's official mascot</span><i>✦</i>
+    <span>Nothing is ever fully spent</span><i>✦</i>
+    <span>Ownership renounced</span><i>✦</i>
+    <span>$DUST on BNB Chain</span><i>✦</i>
+    <span>Aster's official mascot</span><i>✦</i>
+    <span>Nothing is ever fully spent</span><i>✦</i>
+    <span>Ownership renounced</span><i>✦</i>
+    <span>$DUST on BNB Chain</span><i>✦</i>
+  </div>
+</div>
+
+<!-- ── TOKEN ────────────────────────────────────────────── -->
+<section id="token" class="token">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-label">Token</span>
+      <h2 class="section-title">The token</h2>
+      <p class="section-sub">Everything verifiable, nothing invented. Numbers update live.</p>
+    </header>
+
+    <div class="cards">
+      <div class="card reveal" data-verify="owner">
+        <span class="k">Ownership</span>
+        <span class="v">Renounced</span>
+        <span class="s">owner() returns 0x000…000</span>
+        <span class="chk" data-chk="owner" hidden></span>
+      </div>
+      <div class="card reveal" data-verify="supply">
+        <span class="k">Total supply</span>
+        <span class="v">1,000,000,000</span>
+        <span class="s">One billion, fixed</span>
+        <span class="chk" data-chk="supply" hidden></span>
+      </div>
+      <div class="card reveal">
+        <span class="k">Chain</span>
+        <span class="v">BNB Chain</span>
+        <span class="s">BEP-20</span>
+      </div>
+      <div class="card reveal">
+        <span class="k">Market cap</span>
+        <span class="v" data-stat="mcap">—</span>
+        <span class="s">Live</span>
+      </div>
+      <div class="card reveal">
+        <span class="k">Liquidity</span>
+        <span class="v" data-stat="liq">—</span>
+        <span class="s">PancakeSwap DUST/WBNB</span>
+      </div>
+      <div class="card reveal">
+        <span class="k">24h volume</span>
+        <span class="v" data-stat="vol">—</span>
+        <span class="s">Live</span>
+      </div>
+      <div class="card reveal">
+        <span class="k">24h trades</span>
+        <span class="v" data-stat="txns">—</span>
+        <span class="s" data-stat="txsplit">Buys vs sells</span>
+        <span class="pressure" aria-hidden="true"><i data-stat="buybar"></i></span>
+      </div>
+      <div class="card reveal">
+        <span class="k">Trend</span>
+        <span class="v tf" >
+          <span><em>1h</em><b data-stat="h1">—</b></span>
+          <span><em>6h</em><b data-stat="h6">—</b></span>
+          <span><em>24h</em><b data-stat="h24">—</b></span>
+        </span>
+        <span class="s">One window can flatter; three cannot</span>
+      </div>
+    </div>
+
+    <p class="chain-note reveal" id="chain-note" hidden></p>
+
+    <div class="verify reveal">
+      <span>Verify for yourself</span>
+      <a href="https://bscscan.com/token/0x932Fb7f52adBC34ff81B4342b8C036b7b8Ac4444" target="_blank" rel="noopener">BscScan</a>
+      <a href="https://dexscreener.com/bsc/0x19b2caf222446d28906d0f3e66c877379951cbcb" target="_blank" rel="noopener">DexScreener</a>
+      <a href="https://gmgn.ai/bsc/token/0x932fb7f52adbc34ff81b4342b8c036b7b8ac4444" target="_blank" rel="noopener">GMGN</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW TO BUY ───────────────────────────────────────── -->
+<section id="buy" class="buy">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-label">How to buy</span>
+      <h2 class="section-title">Four steps</h2>
+      <p class="section-sub">Ten minutes if it's your first time.</p>
+    </header>
+
+    <ol class="steps">
+      <li class="step reveal">
+        <span class="n">01</span>
+        <h3>Get a wallet</h3>
+        <p>Install MetaMask, Trust Wallet or Rabby, and switch the network to BNB Chain.</p>
+      </li>
+      <li class="step reveal">
+        <span class="n">02</span>
+        <h3>Fund it with BNB</h3>
+        <p>Buy BNB on any exchange and withdraw it to your wallet on BNB Chain. Keep a little spare for gas.</p>
+      </li>
+      <li class="step reveal">
+        <span class="n">03</span>
+        <h3>Open PancakeSwap</h3>
+        <p>Connect your wallet and paste the DUST contract address into the token field.</p>
+        <button class="mini-copy" type="button" data-copy="0x932Fb7f52adBC34ff81B4342b8C036b7b8Ac4444">Copy contract</button>
+      </li>
+      <li class="step reveal">
+        <span class="n">04</span>
+        <h3>Swap and drift</h3>
+        <p>Swap your BNB for $DUST, confirm in your wallet, and welcome aboard. Then come make some art.</p>
+      </li>
+    </ol>
+
+    <div class="buy-cta reveal">
+      <a class="btn btn-lg" href="https://pancakeswap.finance/swap?outputCurrency=0x932Fb7f52adBC34ff81B4342b8C036b7b8Ac4444&chain=bsc" target="_blank" rel="noopener">
+        Swap on PancakeSwap <svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── ART ──────────────────────────────────────────────── -->
+<section id="art" class="art">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-label">Art</span>
+      <h2 class="section-title">Made by the crowd</h2>
+      <p class="section-sub">Every piece below came out of the DUST community. Click any of them.
+         Post yours and it lands here.</p>
+    </header>
+    <div class="gallery" id="gallery"><!-- populated from gallery.json --></div>
+    <div class="art-cta reveal">
+      <a class="btn btn-ghost" href="https://x.com/i/communities/2031077090515403225" target="_blank" rel="noopener">
+        Submit art in the community <svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── JOIN ─────────────────────────────────────────────── -->
+<section class="join">
+  <picture><source srcset="/assets/img/mascot-bull.avif" type="image/avif"><img class="join-art" src="/assets/img/mascot-bull.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="900" height="900"></picture>
+  <div class="wrap">
+    <div class="halo small" aria-hidden="true"><span></span><span></span><span></span></div>
+    <h2 class="reveal">Come drift with us</h2>
+    <p class="reveal">No promises, no roadmap. Just a hooded thing with a sword and a very loud group chat.</p>
+    <div class="socials reveal">
+      <a class="social" href="https://x.com/i/communities/2031077090515403225" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2.2h3.4l-7.4 8.4 8.7 11.5h-6.8l-5.3-7-6.1 7H1.9l7.9-9L1.5 2.2h7l4.8 6.4 5.6-6.4Zm-1.2 17.9h1.9L6.4 4.1H4.4l13.3 16Z"/></svg>
+        <span>X Community</span>
+      </a>
+      <a class="social" href="https://t.me/DUST_Damascot" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.8 19c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-4.9 9-8.1c.4-.3-.1-.5-.6-.2L6.3 12.8 1.5 11.3c-1-.3-1-1 .2-1.5l19-7.3c.9-.3 1.6.2 1.2 1.8Z"/></svg>
+        <span>Telegram</span>
+      </a>
+      <a class="social" href="https://dexscreener.com/bsc/0x19b2caf222446d28906d0f3e66c877379951cbcb" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.5 9 11l4 4 8-8.5"/><path d="M15 6.5h6v6"/></svg>
+        <span>Chart</span>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="brand" href="#top">
+        <picture><source srcset="/assets/img/mascot-avatar.avif" type="image/avif"><img src="/assets/img/mascot-avatar.jpg" alt="" width="30" height="30" decoding="async"></picture>
+        <span>DUST</span>
+      </a>
+      <code class="foot-ca" data-copy="0x932Fb7f52adBC34ff81B4342b8C036b7b8Ac4444">0x932Fb7f52adBC34ff81B4342b8C036b7b8Ac4444</code>
+    </div>
+    <p class="disclaimer">
+      $DUST is a meme coin with no intrinsic value and no expectation of financial return. It is a community
+      mascot project and is not an investment, a security, or a product of any exchange. Crypto assets are
+      highly volatile and you can lose everything you put in. Nothing on this page is financial advice —
+      do your own research.
+    </p>
+    <p class="copy">dustaster.com · © <span id="year">2026</span> the DUST community</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Community art viewer">
+  <button class="lb-close" type="button" aria-label="Close">✕</button>
+  <button class="lb-nav prev" type="button" data-lb-prev aria-label="Previous">‹</button>
+  <img id="lightbox-img" src="" alt="">
+  <button class="lb-nav next" type="button" data-lb-next aria-label="Next">›</button>
+  <a class="lb-cap" id="lightbox-cap" href="#" target="_blank" rel="noopener"></a>
+</div>
+
+<script src="/assets/js/nebula.js" defer></script>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>
