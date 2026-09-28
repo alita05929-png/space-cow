@@ -1,5 +1,4 @@
-/* DUST — dustaster.com
-   Interaction model: the page is made of dust and it reacts to the pointer.
+/* 太空牛
    One rAF loop drives the field; everything else is event-driven. */
 (() => {
   'use strict';
@@ -75,6 +74,7 @@
   if (!reduced) {
     $$('.section-title, .join h2, .chapter-body h3').forEach(el => {
       if (el.dataset.split) return;
+      if (/[\u3400-\u9fff]/.test(el.textContent || '')) return;
       let i = 0;
       const frag = document.createDocumentFragment();
       for (const node of [...el.childNodes]) {
@@ -321,8 +321,9 @@
         if (!file) return;
         const author = typeof item === 'string' ? '' : (item.author || '');
         const url = typeof item === 'string' ? '' : (item.url || '');
-        const src = file.startsWith('data:') ? file : '/assets/img/community/' + file;
-        const alt = author ? `DUST community art by ${author}` : 'DUST community art';
+        const src = (file.startsWith('data:') || file.startsWith('/') || file.startsWith('http'))
+          ? file : '/assets/img/community/' + file;
+        const alt = author ? `太空牛画面 · ${author}` : '太空牛画面';
         const idx = lbItems.length;
         lbItems.push({ src, alt, author, url });
 
@@ -343,9 +344,7 @@
         // one mechanism covers both a missing thumbnail (someone added art
         // without running tools/build_thumbs.sh) and a browser too old for AVIF.
         const img = document.createElement('img');
-        const thumb = src.startsWith('data:') ? src
-          : '/assets/img/community/thumbs/' + file.replace(/\.[^.]+$/, '') + '.avif';
-        img.src = thumb; img.alt = alt;
+        img.src = src; img.alt = alt;
         img.loading = 'lazy'; img.decoding = 'async';
         img.width = 400; img.height = 400;
         img.addEventListener('error', () => {
@@ -384,9 +383,9 @@
         // grid shows, so pointing at the same thumbnails means the ribbon costs
         // nothing extra: every one is already in cache.
         const img = document.createElement('img');
-        const full = '/assets/img/community/' + file;
-        img.src = file.startsWith('data:') ? file
-          : '/assets/img/community/thumbs/' + file.replace(/\.[^.]+$/, '') + '.avif';
+        const full = (file.startsWith('data:') || file.startsWith('/') || file.startsWith('http'))
+          ? file : '/assets/img/community/' + file;
+        img.src = full;
         img.addEventListener('error', () => {
           if (img.src !== full && !file.startsWith('data:')) img.src = full;
         });

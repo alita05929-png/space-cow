@@ -1,4 +1,4 @@
-/* DUST — GPU nebula
+/* 太空牛 — GPU nebula
  *
  * A domain-warped fBm field rendered on the GPU, standing in for the CSS blur
  * blobs. Raw WebGL1, no library, one fullscreen triangle. If anything here is
@@ -71,9 +71,9 @@
                     fbm(p + 3.4 * q + vec2(8.3, 2.8) - t * 0.14));
       float f = fbm(p + 3.2 * r);
 
-      vec3 deep   = vec3(0.031, 0.024, 0.059);
-      vec3 violet = vec3(0.400, 0.290, 0.950);
-      vec3 magent = vec3(0.840, 0.330, 1.000);
+      vec3 deep   = vec3(0.027, 0.043, 0.094);
+      vec3 violet = vec3(0.240, 0.450, 0.980);
+      vec3 magent = vec3(1.000, 0.760, 0.280);
 
       vec3 col = mix(deep, violet, smoothstep(0.22, 0.92, f));
       col = mix(col, magent, smoothstep(0.60, 1.15, f + r.x * 0.45) * 0.75);

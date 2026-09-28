@@ -1,13 +1,12 @@
 {
-  "name": "DUST — The Official Mascot of Aster",
-  "short_name": "DUST",
-  "description": "DUST is the official mascot of Aster. A hooded traveller with a halo and a blade, drifting the chain on BNB Chain.",
+  "name": "太空牛 — Space Cow",
+  "short_name": "太空牛",
+  "description": "太空牛，代号太空牛。一头宇航服小牛，在 BNB Chain 上漂。",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#08060f",
-  "theme_color": "#08060f",
+  "background_color": "#070b18",
+  "theme_color": "#070b18",
   "icons": [
-    { "src": "/assets/img/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "/assets/img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+    { "src": "/assets/img/logo.jpg", "sizes": "400x400", "type": "image/jpeg", "purpose": "any" }
   ]
 }

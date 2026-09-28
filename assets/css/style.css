@@ -1,21 +1,21 @@
-/* ── DUST — dustaster.com ─────────────────────────────── */
+/* ── 太空牛 ───────────────────────────────────────────── */
 
 :root{
-  --void:#08060f;
-  --deep:#0e0a1e;
-  --panel:rgba(255,255,255,.035);
-  --line:rgba(255,255,255,.09);
-  --line-hi:rgba(160,120,255,.42);
-  --violet:#7b5cff;
-  --magenta:#e15fff;
-  --pink:#ff6ad5;
-  --ink:#ffffff;
-  --muted:#a89ecb;
-  --dim:#6f668f;
-  --up:#3ddc97;
-  --down:#ff5d6e;
-  --display:"Archivo Black","Arial Black",system-ui,sans-serif;
-  --body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --void:#070b18;
+  --deep:#10182e;
+  --panel:rgba(255,255,255,.045);
+  --line:rgba(255,255,255,.1);
+  --line-hi:rgba(255,197,61,.5);
+  --violet:#3d7dff;
+  --magenta:#ffc53d;
+  --pink:#ffe08a;
+  --ink:#fffaf0;
+  --muted:#c5cce4;
+  --dim:#8e98b8;
+  --up:#5ee0a0;
+  --down:#ff6b7a;
+  --display:"ZCOOL KuaiLe","Noto Sans SC",system-ui,sans-serif;
+  --body:"Noto Sans SC",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"Space Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
   --wrap:1140px;
   --r:18px;
@@ -736,3 +736,42 @@ section{padding:106px 0}
    existing rule (.brand img, .chapter-art img, .join-art) lays out exactly as
    it did when the img was a direct child. */
 picture{display:contents}
+
+/* ── 太空牛 ───────────────────────────────────────────── */
+.nebula{
+  background:
+    radial-gradient(58% 42% at 78% 6%, rgba(255,197,61,.22), transparent 62%),
+    radial-gradient(52% 40% at 10% 24%, rgba(61,125,255,.30), transparent 64%),
+    radial-gradient(70% 50% at 50% 108%, rgba(90,70,220,.20), transparent 66%),
+    linear-gradient(180deg,#10182e 0%,#070b18 48%,#0a1024 100%);
+}
+.aurora span:nth-child(1){background:radial-gradient(circle,rgba(61,125,255,.48),transparent 68%)}
+.aurora span:nth-child(2){background:radial-gradient(circle,rgba(255,197,61,.32),transparent 68%)}
+.aurora span:nth-child(3){background:radial-gradient(circle,rgba(80,110,255,.34),transparent 70%)}
+.brand img{border-radius:12px;box-shadow:0 0 0 1px var(--line-hi),0 0 22px rgba(255,197,61,.35)}
+.wordmark{font-size:clamp(72px,14vw,156px);letter-spacing:.08em;line-height:1.05}
+.wordmark span{
+  background:linear-gradient(180deg,#fff 18%,#ffe08a 62%,#ffc53d 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  text-shadow:none;filter:drop-shadow(0 12px 28px rgba(255,197,61,.28));
+}
+.chip,.eyebrow,.sec-label,.ca-label,.stat .k,.card .k{
+  text-transform:none;letter-spacing:.06em;font-family:var(--body);
+}
+.section-title,.join h2,.chapter-body h3{line-height:1.25;letter-spacing:.02em}
+.hero-mascot{width:clamp(220px,34vw,360px)}
+.hero-mascot img{
+  border-radius:28px;object-fit:cover;
+  border:1px solid rgba(255,214,120,.4);
+  box-shadow:0 30px 80px -28px rgba(255,180,40,.45),0 0 0 10px rgba(255,197,61,.06);
+}
+.hero-glow{background:radial-gradient(circle,rgba(255,197,61,.4),rgba(255,197,61,0) 68%)}
+.hero-banner{
+  width:min(980px,100%);margin:8px auto 36px;border-radius:22px;overflow:hidden;
+  border:1px solid var(--line-hi);line-height:0;
+  box-shadow:0 30px 80px -36px rgba(80,120,255,.55);
+}
+.hero-banner img{width:100%;height:auto;aspect-ratio:3/1;object-fit:cover;display:block}
+.stage-still{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#070b18}
+.marquee-track span{font-family:var(--display);-webkit-text-stroke:1px rgba(255,214,140,.55)}
+.card .v{line-height:1.2}
